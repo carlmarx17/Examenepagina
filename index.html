@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Simulacro ICFES Salomé</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">Simulacro ICFES</p>
+        <h1>Salomé · Matemáticas y Ciencias</h1>
+      </div>
+      <div class="timer" aria-live="polite">
+        <span id="timerLabel">02:00:00</span>
+        <small>tiempo restante</small>
+      </div>
+    </header>
+
+    <main class="layout">
+      <aside class="panel">
+        <section class="student">
+          <div class="avatar" aria-hidden="true">S</div>
+          <div>
+            <strong>Prueba intermedia-difícil</strong>
+            <span>80 preguntas · 2 horas</span>
+          </div>
+        </section>
+
+        <section class="stats">
+          <div>
+            <strong id="answeredCount">0</strong>
+            <span>respondidas</span>
+          </div>
+          <div>
+            <strong id="remainingCount">80</strong>
+            <span>pendientes</span>
+          </div>
+        </section>
+
+        <section class="legend">
+          <button class="filter active" data-filter="all" type="button">Todas</button>
+          <button class="filter" data-filter="Matemáticas" type="button">Matemáticas</button>
+          <button class="filter" data-filter="Ciencias" type="button">Ciencias</button>
+          <button class="filter" data-filter="Geometría" type="button">Geometría</button>
+        </section>
+
+        <nav id="questionNav" class="question-nav" aria-label="Navegación de preguntas"></nav>
+
+        <button id="finishBtn" class="finish" type="button">Finalizar simulacro</button>
+        <button id="resetBtn" class="ghost" type="button">Reiniciar</button>
+      </aside>
+
+      <section class="workspace">
+        <div class="intro">
+          <div>
+            <p class="eyebrow">Entrenamiento focalizado</p>
+            <h2>Geometría con lectura tipo ICFES</h2>
+          </div>
+          <p>
+            Responde sin ayuda externa. Al finalizar verás puntaje, temas fuertes,
+            temas por reforzar y explicación corta por pregunta.
+          </p>
+        </div>
+
+        <div id="resultBox" class="result hidden"></div>
+        <div id="questions" class="questions"></div>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
